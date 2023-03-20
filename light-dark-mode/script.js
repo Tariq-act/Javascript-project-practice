@@ -6,6 +6,9 @@ const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
 
+const DARK_THEME = true;
+const LIGHT_THEME = false;
+
 // Dark or Light Image
 function imageMode(color) {
   image1.src = `img/undraw_proud_coder_${color}.svg`;
@@ -32,11 +35,11 @@ function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
-    toggleDarkAndLight(true);
+    toggleDarkAndLight(DARK_THEME);
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
     localStorage.setItem('theme', 'light');
-    toggleDarkAndLight(false);
+    toggleDarkAndLight(LIGHT_THEME);
   }
 }
 
@@ -49,6 +52,6 @@ if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
   if (currentTheme === 'dark') {
     toggleSwitch.checked = true;
-    toggleDarkAndLight(true);
+    toggleDarkAndLight(DARK_THEME);
   }
 }

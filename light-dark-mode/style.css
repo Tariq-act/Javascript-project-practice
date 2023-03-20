@@ -26,6 +26,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html > * {
+  transition: all 0.1s ease-in-out;
+}
+
 body {
   margin: 0;
   color: var(--on-background);
